@@ -1,0 +1,109 @@
+.Checkout {
+    &-ProgressBar-Wrapper {
+        display: inline-flex;
+            width: 100%;
+        justify-content: space-evenly;
+        background-color: $default-secondary-base-color;
+        padding-top: 1rem;
+    }
+
+    &-ProgressBar-Step {
+        display: flex;
+            align-items: center;
+            justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &-Final-ProgressBar-Divider {
+        display: none;
+    }
+
+    &-ProgressBar-Step:last-of-type .Checkout-Final-ProgressBar-Divider {
+        display: block;
+    }
+
+    &-ProgressBar-Divider,
+    &-Final-ProgressBar-Divider {
+        border: $default-secondary-dark-color 3px solid; 
+        width: 100%;
+            margin-bottom: 3.5rem;
+        transition: border 2s ease, opacity 2s ease;
+
+        &_active {
+            border: $default-primary-base-color 3px solid; 
+        }
+
+        &_inactive {
+            opacity: 60%; 
+        }
+
+        &_completed {
+            border: $default-primary-base-color 3px solid; 
+            opacity: 100%;
+        }
+    }
+
+    &-ProgressBar-Content {
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        min-width: 6rem;
+    }
+
+    &-StepBadge {
+        display: flex;
+            align-items: center;
+            justify-content: center;
+        width: 3rem;
+            height: 3rem;
+        border-radius: 50%;
+
+        transition: color 2s ease, opacity 2s ease, 2s ease;
+
+        p {
+            padding: 0;
+            margin: 0;
+            line-height: 100px;
+            font-weight: bold;
+        }
+
+        &_active {
+            color: $white;
+            background: $default-primary-base-color;
+        }
+
+        &_inactive {
+            color: $black;
+            opacity: 60%;
+            background: $default-secondary-dark-color;
+        }
+
+        &_completed {
+            color: $white;
+            background: $default-primary-base-color;
+            opacity: 100%;
+        }
+    }
+
+    &-Step-Name {
+        font-weight: bold;
+
+        transition: opacity 2s ease, font-weight 2s ease, color 2s ease;
+        
+        &_active {
+            color: black;
+        }
+
+        &_inactive {
+            color: $default-secondary-dark-color;
+        }
+
+        &_completed {
+            opacity: 100%;
+            font-weight: bold;
+            color: black;
+        }
+    }
+}
